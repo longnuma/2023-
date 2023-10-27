@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int a;
+	
+	//偶数か奇数かを判定する数字を入力
+	printf("数字を入力してください:");
+	scanf_s("%d", &a);
+	
+	//条件分岐
+	if (a % 2 == 0)
+	{
+		printf("%dは偶数です。\n", a);
+	}
+	else {
+		printf("%dは奇数です。\n", a);
+	}
+
+ 	return 0;
+}
