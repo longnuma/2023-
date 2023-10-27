@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int a, b, surplus, result;
+	
+	//２つの整数を入力
+	printf("Please Enter Number:");
+	scanf_s("%d", &a);
+	printf("`Please Enter Other Number:");
+	scanf_s("%d", &b);
+
+	//関数で計算する
+	surplus = a * b;
+
+	//結果を表示する
+	printf("a * b = %d", surplus);
+ 	return 0;
+}
