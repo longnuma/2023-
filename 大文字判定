@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include<string.h>
+
+int main(void)
+{
+    char a[6];//大文字
+
+	printf("アルファベットを入力してください>>>");
+	scanf_s("%5c", &a);
+
+	int upperCaseCount = 0;
+	for (int i = 0; i < 5; i++) {
+		if (a[i] >= 'A' && a[i] <= 'Z') {
+			upperCaseCount++;
+		}
+	}
+
+
+	if (upperCaseCount > 0)
+	{
+		printf("大文字が%d個含まれています。\n", upperCaseCount);
+	}
+	else 
+	{
+		printf("大文字は含まれていません。\n");
+	
+	}
+
+	return 0;
+}
