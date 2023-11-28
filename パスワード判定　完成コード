@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    char a[20];
+
+	printf("８字以上１６字以下のパスワードを入力してください>>>");
+	scanf("%19s", a);
+
+	int upperCaseCount_1 = 0;
+	int upperCaseCount_2 = 0;
+	int upperCaseCount_3 = 0;
+	for (int i = 0; i < 19; i++) 
+	{
+		if (a[i] >= 'A' && a[i] <= 'Z') 
+		{
+			upperCaseCount_1++;
+		}
+		else if (a[i] >= 'a' && a[i] <= 'z') 
+		{
+			upperCaseCount_2++;
+		}
+		else if ((a[i] >= ' ' && a[i] <= '@')||(a[i] >= '[' && a[i] <= '`')||(a[i] >= '{' && a[i] <= '~'))   
+		{
+			upperCaseCount_3++;
+		}
+	}
+
+    int total = upperCaseCount_1 + upperCaseCount_2 + upperCaseCount_3;
+    printf("使用した文字数は%d文字です。\n",total);
+    printf("大文字：%d文字　小文字：%d文字　記号：%d文字\n", upperCaseCount_1, upperCaseCount_2, upperCaseCount_3);
+
+	if (total >=8 && total <=16 && (1 <= upperCaseCount_1 && 1 <= upperCaseCount_2 && 1 <= upperCaseCount_3) )
+	{
+		printf("安全性の高いパスワードです。\n");
+		
+	}
+	else if (total >=8 && total <=16 && ( 0 == upperCaseCount_1 || 0 == upperCaseCount_2 || 0 == upperCaseCount_3) )
+	{
+		printf("大文字、小文字、記号を最低１つ使用して下さい。\n");
+	}
+	
+	else if (total <= 7 && total >=0)
+	{
+		printf("パスワードが短すぎです。\n");
+	}
+	else if (total >= 17 ) 
+	{
+		printf("パスワードが長すぎです。\n");
+	}
+	else
+	{
+	    printf("安全性の低いパスワードです。\n");   
+	}
+	return 0;
+
+}
