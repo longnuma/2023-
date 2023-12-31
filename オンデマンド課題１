@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include<math.h>
+
+int main(void)
+{
+	float a, b, c, x_1,x_2;//二次方程式の定数と解
+	while (true) 
+	{
+		//二次方程式の定数を入力
+		printf("二次方程式の定数を入力してください\n");
+
+	    printf("a=");
+	    scanf_s("%f",&a);
+
+	    printf("b=");
+	    scanf_s("%f",&b);
+
+	    printf("c=");
+	    scanf_s("%f",&c);
+	
+		if (a == 0)
+		{
+			printf("aは0にならないように入力してください\n a=");
+		}
+	    else
+		{
+			printf("計算していく--->\n");
+			break;//ループを切る
+		}
+	}
+	float hanbetu;//判別式
+	
+	hanbetu = b * b - 4 * a * c;//判別式を計算
+
+	//条件分岐
+	if (hanbetu > 0)
+	{
+		//解の計算
+        x_1 = (-b + sqrt(hanbetu))/(2 * a);
+	    x_2 = (-b - sqrt(hanbetu))/(2 * a);
+		
+		//解の出力
+		printf("2つの解がある\nその実数解はx=%2f,%2f\n",x_1,x_2);
+	}
+	else if (hanbetu == 0)
+	{
+		//解の計算
+		x_1 = x_2 = -b/(2*a);
+
+		//解の出力
+		printf("1つの解がある\nその実数解はx=%2f,%2f\n",x_1,x_2);
+	}
+	else
+	{
+		printf("実数解なし\n");
+	}
+
+	return 0;
+}
+
+
