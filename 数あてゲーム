@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+int main()
+{
+	printf("数あてゲーム!!\n1から100の間の乱数を当ててください。\n");
+
+	srand(time(0));//シードをパソコンの時計にする
+
+	int ransuu = (rand() % 101) + 1;//1から100までのランダムな数字を出す
+	int a;
+	printf("数字を入力してください-->");//考えた数字を入力する
+	scanf("%d", &a);
+	
+	while (a < 101) //入力した数字が乱数と同じになるまでループする
+	{
+		if (a < ransuu)
+		{
+			printf("もっと大きい数字です。\n");
+			printf("数字を入力してください-->");//考えた数字を入力する
+			scanf("%d", &a);
+		}
+		else if (a > ransuu)
+		{
+			printf("もっと小さい数字です。\n");
+			printf("数字を入力してください-->");//考えた数字を入力する
+			scanf("%d", &a);
+		}
+		else
+		{
+			printf("正解です。\n");
+			break;
+		}
+	}
+
+	return 0;
+}
